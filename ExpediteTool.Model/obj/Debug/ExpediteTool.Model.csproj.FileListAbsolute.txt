@@ -1,0 +1,15 @@
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\Logs\Log.csv
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\ExpediteTool.Model.dll.config
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\ExpediteTool.Model.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\ExpediteTool.Model.pdb
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\EntityFramework.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\ExpediteTool.Utilities.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\log4net.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\ExpediteTool.Utilities.pdb
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\EntityFramework.xml
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\bin\Debug\log4net.xml
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\obj\Debug\ExpediteTool.Model.csprojResolveAssemblyReference.cache
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\obj\Debug\ExpediteTool.Model.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\obj\Debug\ExpediteTool.Model.pdb

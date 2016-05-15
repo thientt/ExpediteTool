@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpediteToolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ACPReportsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HotLot_BUAllocation" EntityType="ExpediteToolModel.HotLot_BUAllocation" />
+    <EntitySet Name="Hotlot_BUs" EntityType="ExpediteToolModel.Hotlot_BUs" />
+    <EntitySet Name="HotLot_Roles" EntityType="ExpediteToolModel.HotLot_Roles" />
+    <AssociationSet Name="FK_HotLot_BUAllocation_Hotlot_BUs" Association="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs">
+      <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+      <End Role="HotLot_BUAllocation" EntitySet="HotLot_BUAllocation" />
+    </AssociationSet>
+    <EntitySet Name="GP_vSCMInvLatestSnapshot" EntityType="ExpediteToolModel.GP_vSCMInvLatestSnapshot" />
+    <EntitySet Name="HotLot_Users" EntityType="ExpediteToolModel.HotLot_Users" />
+    <AssociationSet Name="FK_UserInfo_Role" Association="ExpediteToolModel.FK_UserInfo_Role">
+      <End Role="HotLot_Roles" EntitySet="HotLot_Roles" />
+      <End Role="HotLot_Users" EntitySet="HotLot_Users" />
+    </AssociationSet>
+    <EntitySet Name="HotLot_Data" EntityType="ExpediteToolModel.HotLot_Data" />
+    <AssociationSet Name="FK_HotLot_Data_Hotlot_BUs" Association="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs">
+      <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+      <End Role="HotLot_Data" EntitySet="HotLot_Data" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HotLot_BUAllocation">
+    <Key>
+      <PropertyRef Name="AllocationId" />
+    </Key>
+    <Property Name="AllocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BUId" Type="Int32" Nullable="false" />
+    <Property Name="LotAllocation" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hotlot_BUs" Relationship="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs" FromRole="HotLot_BUAllocation" ToRole="Hotlot_BUs" />
+  </EntityType>
+  <EntityType Name="Hotlot_BUs">
+    <Key>
+      <PropertyRef Name="BUId" />
+    </Key>
+    <Property Name="BUId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BUName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HotLot_BUAllocation" Relationship="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs" FromRole="Hotlot_BUs" ToRole="HotLot_BUAllocation" />
+    <NavigationProperty Name="HotLot_Data" Relationship="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs" FromRole="Hotlot_BUs" ToRole="HotLot_Data" />
+  </EntityType>
+  <EntityType Name="HotLot_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HotLot_Users" Relationship="ExpediteToolModel.FK_UserInfo_Role" FromRole="HotLot_Roles" ToRole="HotLot_Users" />
+  </EntityType>
+  <Association Name="FK_HotLot_BUAllocation_Hotlot_BUs">
+    <End Type="ExpediteToolModel.Hotlot_BUs" Role="Hotlot_BUs" Multiplicity="1" />
+    <End Type="ExpediteToolModel.HotLot_BUAllocation" Role="HotLot_BUAllocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotlot_BUs">
+        <PropertyRef Name="BUId" />
+      </Principal>
+      <Dependent Role="HotLot_BUAllocation">
+        <PropertyRef Name="BUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GP_vSCMInvLatestSnapshot">
+    <Key>
+      <PropertyRef Name="SCMInvSnapshotID" />
+      <PropertyRef Name="SCMInvID" />
+      <PropertyRef Name="Lot" />
+      <PropertyRef Name="Transfer_Stat" />
+      <PropertyRef Name="Origin" />
+    </Key>
+    <Property Name="CalendarID" Type="Int16" />
+    <Property Name="SCMInvSnapshotID" Type="Int16" Nullable="false" />
+    <Property Name="SCMInvID" Type="Int32" Nullable="false" />
+    <Property Name="SCMInv_DateExtracted" Type="DateTime" Precision="0" />
+    <Property Name="Lot" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="RevLoc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Phase" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Operation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Die" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Family" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Transfer_Stat" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Origin" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Failure_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="510" FixedLength="false" Unicode="false" />
+    <Property Name="LTS_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="SCM_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Die_Rev" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SCM_Plant_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_PSO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Start_Date" Type="DateTime" Precision="3" />
+    <Property Name="SCM_End_Date" Type="DateTime" Precision="3" />
+    <Property Name="SCM_End_Date_To_CT" Type="Int32" />
+    <Property Name="SCM_Hit_Miss" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Phase_Est_Date" Type="DateTime" Precision="3" />
+    <Property Name="Phase_Est_Date_To_CT" Type="Int32" />
+    <Property Name="Phase_Est_Hit_Miss" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MPN_CT" Type="Int16" />
+    <Property Name="Receiv_Plant" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Fab_Rev" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="IntDevice" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Rom_Code" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Flash" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="EEPROM" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Owner" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Group_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Auto" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="GPC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Package" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Leads" Type="Int16" />
+    <Property Name="Speed" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Bond_Type" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Asm_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Test_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="MfgLoc" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="FabLoc" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Storage_Loc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Lot_Stat" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Comets_Part_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CPN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SL" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Mapping_Part_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Last_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Qty" Type="Int32" />
+    <Property Name="Last_Owner" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Loc_Type" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Store" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LastModif" Type="DateTime" Precision="3" />
+    <Property Name="Audit_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ABI_Start_delay" Type="Int16" />
+    <Property Name="OpDays" Type="Int16" />
+    <Property Name="AsmDateCd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DieQty" Type="Int32" />
+    <Property Name="WaferQty" Type="Int32" />
+    <Property Name="NGD" Type="Int32" />
+    <Property Name="NGDSource" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DieQtyCalculated" Type="Int32" />
+    <Property Name="FGDieQtyCalculated" Type="Int32" />
+    <Property Name="WaferQtyCalculated" Type="Int32" />
+    <Property Name="PhaseWithDB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_devfam" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="devfam" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DieCached" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HotLot_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsComfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="Guid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordHasTemp" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HotLot_Roles" Relationship="ExpediteToolModel.FK_UserInfo_Role" FromRole="HotLot_Users" ToRole="HotLot_Roles" />
+  </EntityType>
+  <Association Name="FK_UserInfo_Role">
+    <End Type="ExpediteToolModel.HotLot_Roles" Role="HotLot_Roles" Multiplicity="1" />
+    <End Type="ExpediteToolModel.HotLot_Users" Role="HotLot_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HotLot_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="HotLot_Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HotLot_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LotId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RequestOutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="BUId" Type="Int32" Nullable="false" />
+    <Property Name="Owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ScmEndDate" Type="DateTime" Precision="3" />
+    <Property Name="Platform" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentOperation" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Device" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Requestor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotPriority" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hotlot_BUs" Relationship="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs" FromRole="HotLot_Data" ToRole="Hotlot_BUs" />
+  </EntityType>
+  <Association Name="FK_HotLot_Data_Hotlot_BUs">
+    <End Type="ExpediteToolModel.Hotlot_BUs" Role="Hotlot_BUs" Multiplicity="1" />
+    <End Type="ExpediteToolModel.HotLot_Data" Role="HotLot_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotlot_BUs">
+        <PropertyRef Name="BUId" />
+      </Principal>
+      <Dependent Role="HotLot_Data">
+        <PropertyRef Name="BUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

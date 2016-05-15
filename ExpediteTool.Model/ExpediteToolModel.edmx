@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ExpediteToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ACP_REPORTS.dbo.GP_vSCMInvLatestSnapshot' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GP_vSCMInvLatestSnapshot">
+          <Key>
+            <PropertyRef Name="SCMInvSnapshotID" />
+            <PropertyRef Name="SCMInvID" />
+            <PropertyRef Name="Lot" />
+            <PropertyRef Name="Transfer_Stat" />
+            <PropertyRef Name="Origin" />
+          </Key>
+          <Property Name="CalendarID" Type="smallint" />
+          <Property Name="SCMInvSnapshotID" Type="smallint" Nullable="false" />
+          <Property Name="SCMInvID" Type="int" Nullable="false" />
+          <Property Name="SCMInv_DateExtracted" Type="smalldatetime" />
+          <Property Name="Lot" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="RevLoc" Type="varchar" MaxLength="5" />
+          <Property Name="Phase" Type="varchar" MaxLength="1" />
+          <Property Name="Operation" Type="varchar" MaxLength="14" />
+          <Property Name="Die" Type="varchar" MaxLength="5" />
+          <Property Name="Family" Type="varchar" MaxLength="2" />
+          <Property Name="Transfer_Stat" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Origin" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Failure_Description" Type="varchar" MaxLength="255" />
+          <Property Name="Comments" Type="varchar" MaxLength="510" />
+          <Property Name="LTS_MPN" Type="varchar" MaxLength="18" />
+          <Property Name="SCM_MPN" Type="varchar" MaxLength="18" />
+          <Property Name="Die_Rev" Type="varchar" MaxLength="1" />
+          <Property Name="SCM_Plant_Location" Type="varchar" MaxLength="8" />
+          <Property Name="Stock_PSO" Type="varchar" MaxLength="1" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Start_Date" Type="datetime" />
+          <Property Name="SCM_End_Date" Type="datetime" />
+          <Property Name="SCM_End_Date_To_CT" Type="int" />
+          <Property Name="SCM_Hit_Miss" Type="varchar" MaxLength="1" />
+          <Property Name="Phase_Est_Date" Type="datetime" />
+          <Property Name="Phase_Est_Date_To_CT" Type="int" />
+          <Property Name="Phase_Est_Hit_Miss" Type="varchar" MaxLength="1" />
+          <Property Name="MPN_CT" Type="smallint" />
+          <Property Name="Receiv_Plant" Type="varchar" MaxLength="8" />
+          <Property Name="Fab_Rev" Type="varchar" MaxLength="7" />
+          <Property Name="IntDevice" Type="varchar" MaxLength="20" />
+          <Property Name="Rom_Code" Type="varchar" MaxLength="4" />
+          <Property Name="Flash" Type="varchar" MaxLength="2" />
+          <Property Name="EEPROM" Type="varchar" MaxLength="2" />
+          <Property Name="Owner" Type="varchar" MaxLength="5" />
+          <Property Name="Group_ID" Type="varchar" MaxLength="8" />
+          <Property Name="Auto" Type="varchar" MaxLength="1" />
+          <Property Name="GPC" Type="varchar" MaxLength="3" />
+          <Property Name="Package" Type="varchar" MaxLength="3" />
+          <Property Name="Leads" Type="smallint" />
+          <Property Name="Speed" Type="varchar" MaxLength="2" />
+          <Property Name="Type" Type="varchar" MaxLength="1" />
+          <Property Name="Bond_Type" Type="varchar" MaxLength="2" />
+          <Property Name="Asm_Location" Type="varchar" MaxLength="8" />
+          <Property Name="Test_Location" Type="varchar" MaxLength="8" />
+          <Property Name="MfgLoc" Type="varchar" MaxLength="8" />
+          <Property Name="FabLoc" Type="varchar" MaxLength="3" />
+          <Property Name="Storage_Loc" Type="varchar" MaxLength="4" />
+          <Property Name="Lot_Stat" Type="varchar" MaxLength="5" />
+          <Property Name="Comets_Part_Number" Type="varchar" MaxLength="25" />
+          <Property Name="CPN" Type="varchar" MaxLength="25" />
+          <Property Name="SL" Type="varchar" MaxLength="8" />
+          <Property Name="Mapping_Part_Number" Type="varchar" MaxLength="25" />
+          <Property Name="Last_MPN" Type="varchar" MaxLength="18" />
+          <Property Name="Last_Qty" Type="int" />
+          <Property Name="Last_Owner" Type="varchar" MaxLength="5" />
+          <Property Name="Last_Location" Type="varchar" MaxLength="8" />
+          <Property Name="Last_Loc_Type" Type="varchar" MaxLength="4" />
+          <Property Name="Last_Store" Type="varchar" MaxLength="1" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="15" />
+          <Property Name="LastModif" Type="datetime" />
+          <Property Name="Audit_ID" Type="varchar" MaxLength="15" />
+          <Property Name="ABI_Start_delay" Type="smallint" />
+          <Property Name="OpDays" Type="smallint" />
+          <Property Name="AsmDateCd" Type="varchar" MaxLength="20" />
+          <Property Name="DieQty" Type="int" />
+          <Property Name="WaferQty" Type="int" />
+          <Property Name="NGD" Type="int" />
+          <Property Name="NGDSource" Type="varchar" MaxLength="1" />
+          <Property Name="DieQtyCalculated" Type="int" />
+          <Property Name="FGDieQtyCalculated" Type="int" />
+          <Property Name="WaferQtyCalculated" Type="int" />
+          <Property Name="PhaseWithDB" Type="varchar" MaxLength="2" />
+          <Property Name="MDL_devfam" Type="varchar" MaxLength="2" />
+          <Property Name="devfam" Type="varchar" MaxLength="2" />
+          <Property Name="DieCached" Type="varchar" MaxLength="5" />
+          <Property Name="BU" Type="varchar" MaxLength="20" />
+          <Property Name="PF" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="HotLot_BUAllocation">
+          <Key>
+            <PropertyRef Name="AllocationId" />
+          </Key>
+          <Property Name="AllocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BUId" Type="int" Nullable="false" />
+          <Property Name="LotAllocation" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hotlot_BUs">
+          <Key>
+            <PropertyRef Name="BUId" />
+          </Key>
+          <Property Name="BUId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BUName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HotLot_Data">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LotId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RequestOutDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="BUId" Type="int" Nullable="false" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ScmEndDate" Type="datetime" />
+          <Property Name="Platform" Type="nvarchar" MaxLength="40" />
+          <Property Name="CurrentOperation" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Device" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Requestor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LotPriority" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HotLot_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HotLot_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLogin" Type="datetime" Nullable="false" />
+          <Property Name="IsComfirmed" Type="bit" Nullable="false" />
+          <Property Name="Guid" Type="varchar" MaxLength="255" />
+          <Property Name="PasswordHasTemp" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_HotLot_BUAllocation_Hotlot_BUs">
+          <End Role="Hotlot_BUs" Type="Self.Hotlot_BUs" Multiplicity="1" />
+          <End Role="HotLot_BUAllocation" Type="Self.HotLot_BUAllocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotlot_BUs">
+              <PropertyRef Name="BUId" />
+            </Principal>
+            <Dependent Role="HotLot_BUAllocation">
+              <PropertyRef Name="BUId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HotLot_Data_Hotlot_BUs">
+          <End Role="Hotlot_BUs" Type="Self.Hotlot_BUs" Multiplicity="1" />
+          <End Role="HotLot_Data" Type="Self.HotLot_Data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotlot_BUs">
+              <PropertyRef Name="BUId" />
+            </Principal>
+            <Dependent Role="HotLot_Data">
+              <PropertyRef Name="BUId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserInfo_Role">
+          <End Role="HotLot_Roles" Type="Self.HotLot_Roles" Multiplicity="1" />
+          <End Role="HotLot_Users" Type="Self.HotLot_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotLot_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="HotLot_Users">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ExpediteToolModelStoreContainer">
+          <EntitySet Name="HotLot_BUAllocation" EntityType="Self.HotLot_BUAllocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotlot_BUs" EntityType="Self.Hotlot_BUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotLot_Data" EntityType="Self.HotLot_Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotLot_Roles" EntityType="Self.HotLot_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotLot_Users" EntityType="Self.HotLot_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GP_vSCMInvLatestSnapshot" EntityType="Self.GP_vSCMInvLatestSnapshot" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GP_vSCMInvLatestSnapshot].[CalendarID] AS [CalendarID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInvSnapshotID] AS [SCMInvSnapshotID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInvID] AS [SCMInvID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInv_DateExtracted] AS [SCMInv_DateExtracted], 
+    [GP_vSCMInvLatestSnapshot].[Lot] AS [Lot], 
+    [GP_vSCMInvLatestSnapshot].[RevLoc] AS [RevLoc], 
+    [GP_vSCMInvLatestSnapshot].[Phase] AS [Phase], 
+    [GP_vSCMInvLatestSnapshot].[Operation] AS [Operation], 
+    [GP_vSCMInvLatestSnapshot].[Die] AS [Die], 
+    [GP_vSCMInvLatestSnapshot].[Family] AS [Family], 
+    [GP_vSCMInvLatestSnapshot].[Transfer_Stat] AS [Transfer_Stat], 
+    [GP_vSCMInvLatestSnapshot].[Origin] AS [Origin], 
+    [GP_vSCMInvLatestSnapshot].[Failure_Description] AS [Failure_Description], 
+    [GP_vSCMInvLatestSnapshot].[Comments] AS [Comments], 
+    [GP_vSCMInvLatestSnapshot].[LTS_MPN] AS [LTS_MPN], 
+    [GP_vSCMInvLatestSnapshot].[SCM_MPN] AS [SCM_MPN], 
+    [GP_vSCMInvLatestSnapshot].[Die_Rev] AS [Die_Rev], 
+    [GP_vSCMInvLatestSnapshot].[SCM_Plant_Location] AS [SCM_Plant_Location], 
+    [GP_vSCMInvLatestSnapshot].[Stock_PSO] AS [Stock_PSO], 
+    [GP_vSCMInvLatestSnapshot].[Quantity] AS [Quantity], 
+    [GP_vSCMInvLatestSnapshot].[Start_Date] AS [Start_Date], 
+    [GP_vSCMInvLatestSnapshot].[SCM_End_Date] AS [SCM_End_Date], 
+    [GP_vSCMInvLatestSnapshot].[SCM_End_Date_To_CT] AS [SCM_End_Date_To_CT], 
+    [GP_vSCMInvLatestSnapshot].[SCM_Hit_Miss] AS [SCM_Hit_Miss], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Date] AS [Phase_Est_Date], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Date_To_CT] AS [Phase_Est_Date_To_CT], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Hit_Miss] AS [Phase_Est_Hit_Miss], 
+    [GP_vSCMInvLatestSnapshot].[MPN_CT] AS [MPN_CT], 
+    [GP_vSCMInvLatestSnapshot].[Receiv_Plant] AS [Receiv_Plant], 
+    [GP_vSCMInvLatestSnapshot].[Fab_Rev] AS [Fab_Rev], 
+    [GP_vSCMInvLatestSnapshot].[IntDevice] AS [IntDevice], 
+    [GP_vSCMInvLatestSnapshot].[Rom_Code] AS [Rom_Code], 
+    [GP_vSCMInvLatestSnapshot].[Flash] AS [Flash], 
+    [GP_vSCMInvLatestSnapshot].[EEPROM] AS [EEPROM], 
+    [GP_vSCMInvLatestSnapshot].[Owner] AS [Owner], 
+    [GP_vSCMInvLatestSnapshot].[Group_ID] AS [Group_ID], 
+    [GP_vSCMInvLatestSnapshot].[Auto] AS [Auto], 
+    [GP_vSCMInvLatestSnapshot].[GPC] AS [GPC], 
+    [GP_vSCMInvLatestSnapshot].[Package] AS [Package], 
+    [GP_vSCMInvLatestSnapshot].[Leads] AS [Leads], 
+    [GP_vSCMInvLatestSnapshot].[Speed] AS [Speed], 
+    [GP_vSCMInvLatestSnapshot].[Type] AS [Type], 
+    [GP_vSCMInvLatestSnapshot].[Bond_Type] AS [Bond_Type], 
+    [GP_vSCMInvLatestSnapshot].[Asm_Location] AS [Asm_Location], 
+    [GP_vSCMInvLatestSnapshot].[Test_Location] AS [Test_Location], 
+    [GP_vSCMInvLatestSnapshot].[MfgLoc] AS [MfgLoc], 
+    [GP_vSCMInvLatestSnapshot].[FabLoc] AS [FabLoc], 
+    [GP_vSCMInvLatestSnapshot].[Storage_Loc] AS [Storage_Loc], 
+    [GP_vSCMInvLatestSnapshot].[Lot_Stat] AS [Lot_Stat], 
+    [GP_vSCMInvLatestSnapshot].[Comets_Part_Number] AS [Comets_Part_Number], 
+    [GP_vSCMInvLatestSnapshot].[CPN] AS [CPN], 
+    [GP_vSCMInvLatestSnapshot].[SL] AS [SL], 
+    [GP_vSCMInvLatestSnapshot].[Mapping_Part_Number] AS [Mapping_Part_Number], 
+    [GP_vSCMInvLatestSnapshot].[Last_MPN] AS [Last_MPN], 
+    [GP_vSCMInvLatestSnapshot].[Last_Qty] AS [Last_Qty], 
+    [GP_vSCMInvLatestSnapshot].[Last_Owner] AS [Last_Owner], 
+    [GP_vSCMInvLatestSnapshot].[Last_Location] AS [Last_Location], 
+    [GP_vSCMInvLatestSnapshot].[Last_Loc_Type] AS [Last_Loc_Type], 
+    [GP_vSCMInvLatestSnapshot].[Last_Store] AS [Last_Store], 
+    [GP_vSCMInvLatestSnapshot].[CreateDate] AS [CreateDate], 
+    [GP_vSCMInvLatestSnapshot].[CreateBy] AS [CreateBy], 
+    [GP_vSCMInvLatestSnapshot].[LastModif] AS [LastModif], 
+    [GP_vSCMInvLatestSnapshot].[Audit_ID] AS [Audit_ID], 
+    [GP_vSCMInvLatestSnapshot].[ABI_Start_delay] AS [ABI_Start_delay], 
+    [GP_vSCMInvLatestSnapshot].[OpDays] AS [OpDays], 
+    [GP_vSCMInvLatestSnapshot].[AsmDateCd] AS [AsmDateCd], 
+    [GP_vSCMInvLatestSnapshot].[DieQty] AS [DieQty], 
+    [GP_vSCMInvLatestSnapshot].[WaferQty] AS [WaferQty], 
+    [GP_vSCMInvLatestSnapshot].[NGD] AS [NGD], 
+    [GP_vSCMInvLatestSnapshot].[NGDSource] AS [NGDSource], 
+    [GP_vSCMInvLatestSnapshot].[DieQtyCalculated] AS [DieQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[FGDieQtyCalculated] AS [FGDieQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[WaferQtyCalculated] AS [WaferQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[PhaseWithDB] AS [PhaseWithDB], 
+    [GP_vSCMInvLatestSnapshot].[MDL_devfam] AS [MDL_devfam], 
+    [GP_vSCMInvLatestSnapshot].[devfam] AS [devfam], 
+    [GP_vSCMInvLatestSnapshot].[DieCached] AS [DieCached], 
+    [GP_vSCMInvLatestSnapshot].[BU] AS [BU], 
+    [GP_vSCMInvLatestSnapshot].[PF] AS [PF]
+    FROM [dbo].[GP_vSCMInvLatestSnapshot] AS [GP_vSCMInvLatestSnapshot]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_HotLot_BUAllocation_Hotlot_BUs" Association="Self.FK_HotLot_BUAllocation_Hotlot_BUs">
+            <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+            <End Role="HotLot_BUAllocation" EntitySet="HotLot_BUAllocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HotLot_Data_Hotlot_BUs" Association="Self.FK_HotLot_Data_Hotlot_BUs">
+            <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+            <End Role="HotLot_Data" EntitySet="HotLot_Data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserInfo_Role" Association="Self.FK_UserInfo_Role">
+            <End Role="HotLot_Roles" EntitySet="HotLot_Roles" />
+            <End Role="HotLot_Users" EntitySet="HotLot_Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExpediteToolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ACPReportsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HotLot_BUAllocation" EntityType="ExpediteToolModel.HotLot_BUAllocation" />
+          <EntitySet Name="Hotlot_BUs" EntityType="ExpediteToolModel.Hotlot_BUs" />
+          <EntitySet Name="HotLot_Roles" EntityType="ExpediteToolModel.HotLot_Roles" />
+          <AssociationSet Name="FK_HotLot_BUAllocation_Hotlot_BUs" Association="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs">
+            <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+            <End Role="HotLot_BUAllocation" EntitySet="HotLot_BUAllocation" />
+          </AssociationSet>
+          <EntitySet Name="GP_vSCMInvLatestSnapshot" EntityType="ExpediteToolModel.GP_vSCMInvLatestSnapshot" />
+          <EntitySet Name="HotLot_Users" EntityType="ExpediteToolModel.HotLot_Users" />
+          <AssociationSet Name="FK_UserInfo_Role" Association="ExpediteToolModel.FK_UserInfo_Role">
+            <End Role="HotLot_Roles" EntitySet="HotLot_Roles" />
+            <End Role="HotLot_Users" EntitySet="HotLot_Users" />
+          </AssociationSet>
+          <EntitySet Name="HotLot_Data" EntityType="ExpediteToolModel.HotLot_Data" />
+          <AssociationSet Name="FK_HotLot_Data_Hotlot_BUs" Association="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs">
+            <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+            <End Role="HotLot_Data" EntitySet="HotLot_Data" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HotLot_BUAllocation">
+          <Key>
+            <PropertyRef Name="AllocationId" />
+          </Key>
+          <Property Name="AllocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BUId" Type="Int32" Nullable="false" />
+          <Property Name="LotAllocation" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hotlot_BUs" Relationship="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs" FromRole="HotLot_BUAllocation" ToRole="Hotlot_BUs" />
+        </EntityType>
+        <EntityType Name="Hotlot_BUs">
+          <Key>
+            <PropertyRef Name="BUId" />
+          </Key>
+          <Property Name="BUId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BUName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HotLot_BUAllocation" Relationship="ExpediteToolModel.FK_HotLot_BUAllocation_Hotlot_BUs" FromRole="Hotlot_BUs" ToRole="HotLot_BUAllocation" />
+          <NavigationProperty Name="HotLot_Data" Relationship="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs" FromRole="Hotlot_BUs" ToRole="HotLot_Data" />
+        </EntityType>
+        <EntityType Name="HotLot_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HotLot_Users" Relationship="ExpediteToolModel.FK_UserInfo_Role" FromRole="HotLot_Roles" ToRole="HotLot_Users" />
+        </EntityType>
+        <Association Name="FK_HotLot_BUAllocation_Hotlot_BUs">
+          <End Type="ExpediteToolModel.Hotlot_BUs" Role="Hotlot_BUs" Multiplicity="1" />
+          <End Type="ExpediteToolModel.HotLot_BUAllocation" Role="HotLot_BUAllocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotlot_BUs">
+              <PropertyRef Name="BUId" />
+            </Principal>
+            <Dependent Role="HotLot_BUAllocation">
+              <PropertyRef Name="BUId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GP_vSCMInvLatestSnapshot">
+          <Key>
+            <PropertyRef Name="SCMInvSnapshotID" />
+            <PropertyRef Name="SCMInvID" />
+            <PropertyRef Name="Lot" />
+            <PropertyRef Name="Transfer_Stat" />
+            <PropertyRef Name="Origin" />
+          </Key>
+          <Property Name="CalendarID" Type="Int16" />
+          <Property Name="SCMInvSnapshotID" Type="Int16" Nullable="false" />
+          <Property Name="SCMInvID" Type="Int32" Nullable="false" />
+          <Property Name="SCMInv_DateExtracted" Type="DateTime" Precision="0" />
+          <Property Name="Lot" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="RevLoc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Phase" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Operation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Die" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Family" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Transfer_Stat" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Origin" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Failure_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Comments" Type="String" MaxLength="510" FixedLength="false" Unicode="false" />
+          <Property Name="LTS_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="SCM_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Die_Rev" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SCM_Plant_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Stock_PSO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Start_Date" Type="DateTime" Precision="3" />
+          <Property Name="SCM_End_Date" Type="DateTime" Precision="3" />
+          <Property Name="SCM_End_Date_To_CT" Type="Int32" />
+          <Property Name="SCM_Hit_Miss" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Phase_Est_Date" Type="DateTime" Precision="3" />
+          <Property Name="Phase_Est_Date_To_CT" Type="Int32" />
+          <Property Name="Phase_Est_Hit_Miss" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MPN_CT" Type="Int16" />
+          <Property Name="Receiv_Plant" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Fab_Rev" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="IntDevice" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Rom_Code" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Flash" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EEPROM" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Owner" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Group_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Auto" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GPC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Package" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Leads" Type="Int16" />
+          <Property Name="Speed" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Bond_Type" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Asm_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Test_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MfgLoc" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FabLoc" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Storage_Loc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Lot_Stat" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Comets_Part_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CPN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SL" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Mapping_Part_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Last_MPN" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Qty" Type="Int32" />
+          <Property Name="Last_Owner" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Location" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Loc_Type" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Store" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LastModif" Type="DateTime" Precision="3" />
+          <Property Name="Audit_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ABI_Start_delay" Type="Int16" />
+          <Property Name="OpDays" Type="Int16" />
+          <Property Name="AsmDateCd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DieQty" Type="Int32" />
+          <Property Name="WaferQty" Type="Int32" />
+          <Property Name="NGD" Type="Int32" />
+          <Property Name="NGDSource" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DieQtyCalculated" Type="Int32" />
+          <Property Name="FGDieQtyCalculated" Type="Int32" />
+          <Property Name="WaferQtyCalculated" Type="Int32" />
+          <Property Name="PhaseWithDB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="MDL_devfam" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="devfam" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DieCached" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="BU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="HotLot_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsComfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="Guid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordHasTemp" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="HotLot_Roles" Relationship="ExpediteToolModel.FK_UserInfo_Role" FromRole="HotLot_Users" ToRole="HotLot_Roles" />
+        </EntityType>
+        <Association Name="FK_UserInfo_Role">
+          <End Type="ExpediteToolModel.HotLot_Roles" Role="HotLot_Roles" Multiplicity="1" />
+          <End Type="ExpediteToolModel.HotLot_Users" Role="HotLot_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotLot_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="HotLot_Users">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="HotLot_Data">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LotId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RequestOutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="BUId" Type="Int32" Nullable="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ScmEndDate" Type="DateTime" Precision="3" />
+          <Property Name="Platform" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentOperation" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Requestor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LotPriority" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Hotlot_BUs" Relationship="ExpediteToolModel.FK_HotLot_Data_Hotlot_BUs" FromRole="HotLot_Data" ToRole="Hotlot_BUs" />
+        </EntityType>
+        <Association Name="FK_HotLot_Data_Hotlot_BUs">
+          <End Type="ExpediteToolModel.Hotlot_BUs" Role="Hotlot_BUs" Multiplicity="1" />
+          <End Type="ExpediteToolModel.HotLot_Data" Role="HotLot_Data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotlot_BUs">
+              <PropertyRef Name="BUId" />
+            </Principal>
+            <Dependent Role="HotLot_Data">
+              <PropertyRef Name="BUId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExpediteToolModelStoreContainer" CdmEntityContainer="ACPReportsEntities">
+          <EntitySetMapping Name="HotLot_BUAllocation">
+            <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_BUAllocation">
+              <MappingFragment StoreEntitySet="HotLot_BUAllocation">
+                <ScalarProperty Name="LotAllocation" ColumnName="LotAllocation" />
+                <ScalarProperty Name="BUId" ColumnName="BUId" />
+                <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotlot_BUs">
+            <EntityTypeMapping TypeName="ExpediteToolModel.Hotlot_BUs">
+              <MappingFragment StoreEntitySet="Hotlot_BUs">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BUName" ColumnName="BUName" />
+                <ScalarProperty Name="BUId" ColumnName="BUId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotLot_Roles">
+            <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Roles">
+              <MappingFragment StoreEntitySet="HotLot_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GP_vSCMInvLatestSnapshot">
+            <EntityTypeMapping TypeName="ExpediteToolModel.GP_vSCMInvLatestSnapshot">
+              <MappingFragment StoreEntitySet="GP_vSCMInvLatestSnapshot">
+                <ScalarProperty Name="PF" ColumnName="PF" />
+                <ScalarProperty Name="BU" ColumnName="BU" />
+                <ScalarProperty Name="DieCached" ColumnName="DieCached" />
+                <ScalarProperty Name="devfam" ColumnName="devfam" />
+                <ScalarProperty Name="MDL_devfam" ColumnName="MDL_devfam" />
+                <ScalarProperty Name="PhaseWithDB" ColumnName="PhaseWithDB" />
+                <ScalarProperty Name="WaferQtyCalculated" ColumnName="WaferQtyCalculated" />
+                <ScalarProperty Name="FGDieQtyCalculated" ColumnName="FGDieQtyCalculated" />
+                <ScalarProperty Name="DieQtyCalculated" ColumnName="DieQtyCalculated" />
+                <ScalarProperty Name="NGDSource" ColumnName="NGDSource" />
+                <ScalarProperty Name="NGD" ColumnName="NGD" />
+                <ScalarProperty Name="WaferQty" ColumnName="WaferQty" />
+                <ScalarProperty Name="DieQty" ColumnName="DieQty" />
+                <ScalarProperty Name="AsmDateCd" ColumnName="AsmDateCd" />
+                <ScalarProperty Name="OpDays" ColumnName="OpDays" />
+                <ScalarProperty Name="ABI_Start_delay" ColumnName="ABI_Start_delay" />
+                <ScalarProperty Name="Audit_ID" ColumnName="Audit_ID" />
+                <ScalarProperty Name="LastModif" ColumnName="LastModif" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Last_Store" ColumnName="Last_Store" />
+                <ScalarProperty Name="Last_Loc_Type" ColumnName="Last_Loc_Type" />
+                <ScalarProperty Name="Last_Location" ColumnName="Last_Location" />
+                <ScalarProperty Name="Last_Owner" ColumnName="Last_Owner" />
+                <ScalarProperty Name="Last_Qty" ColumnName="Last_Qty" />
+                <ScalarProperty Name="Last_MPN" ColumnName="Last_MPN" />
+                <ScalarProperty Name="Mapping_Part_Number" ColumnName="Mapping_Part_Number" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="CPN" ColumnName="CPN" />
+                <ScalarProperty Name="Comets_Part_Number" ColumnName="Comets_Part_Number" />
+                <ScalarProperty Name="Lot_Stat" ColumnName="Lot_Stat" />
+                <ScalarProperty Name="Storage_Loc" ColumnName="Storage_Loc" />
+                <ScalarProperty Name="FabLoc" ColumnName="FabLoc" />
+                <ScalarProperty Name="MfgLoc" ColumnName="MfgLoc" />
+                <ScalarProperty Name="Test_Location" ColumnName="Test_Location" />
+                <ScalarProperty Name="Asm_Location" ColumnName="Asm_Location" />
+                <ScalarProperty Name="Bond_Type" ColumnName="Bond_Type" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Leads" ColumnName="Leads" />
+                <ScalarProperty Name="Package" ColumnName="Package" />
+                <ScalarProperty Name="GPC" ColumnName="GPC" />
+                <ScalarProperty Name="Auto" ColumnName="Auto" />
+                <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="EEPROM" ColumnName="EEPROM" />
+                <ScalarProperty Name="Flash" ColumnName="Flash" />
+                <ScalarProperty Name="Rom_Code" ColumnName="Rom_Code" />
+                <ScalarProperty Name="IntDevice" ColumnName="IntDevice" />
+                <ScalarProperty Name="Fab_Rev" ColumnName="Fab_Rev" />
+                <ScalarProperty Name="Receiv_Plant" ColumnName="Receiv_Plant" />
+                <ScalarProperty Name="MPN_CT" ColumnName="MPN_CT" />
+                <ScalarProperty Name="Phase_Est_Hit_Miss" ColumnName="Phase_Est_Hit_Miss" />
+                <ScalarProperty Name="Phase_Est_Date_To_CT" ColumnName="Phase_Est_Date_To_CT" />
+                <ScalarProperty Name="Phase_Est_Date" ColumnName="Phase_Est_Date" />
+                <ScalarProperty Name="SCM_Hit_Miss" ColumnName="SCM_Hit_Miss" />
+                <ScalarProperty Name="SCM_End_Date_To_CT" ColumnName="SCM_End_Date_To_CT" />
+                <ScalarProperty Name="SCM_End_Date" ColumnName="SCM_End_Date" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Stock_PSO" ColumnName="Stock_PSO" />
+                <ScalarProperty Name="SCM_Plant_Location" ColumnName="SCM_Plant_Location" />
+                <ScalarProperty Name="Die_Rev" ColumnName="Die_Rev" />
+                <ScalarProperty Name="SCM_MPN" ColumnName="SCM_MPN" />
+                <ScalarProperty Name="LTS_MPN" ColumnName="LTS_MPN" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Failure_Description" ColumnName="Failure_Description" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Transfer_Stat" ColumnName="Transfer_Stat" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Die" ColumnName="Die" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="Phase" ColumnName="Phase" />
+                <ScalarProperty Name="RevLoc" ColumnName="RevLoc" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="SCMInv_DateExtracted" ColumnName="SCMInv_DateExtracted" />
+                <ScalarProperty Name="SCMInvID" ColumnName="SCMInvID" />
+                <ScalarProperty Name="SCMInvSnapshotID" ColumnName="SCMInvSnapshotID" />
+                <ScalarProperty Name="CalendarID" ColumnName="CalendarID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotLot_Users">
+            <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Users">
+              <MappingFragment StoreEntitySet="HotLot_Users">
+                <ScalarProperty Name="PasswordHasTemp" ColumnName="PasswordHasTemp" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="IsComfirmed" ColumnName="IsComfirmed" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotLot_Data">
+            <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Data">
+              <MappingFragment StoreEntitySet="HotLot_Data">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="LotPriority" ColumnName="LotPriority" />
+                <ScalarProperty Name="Requestor" ColumnName="Requestor" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="CurrentOperation" ColumnName="CurrentOperation" />
+                <ScalarProperty Name="Platform" ColumnName="Platform" />
+                <ScalarProperty Name="ScmEndDate" ColumnName="ScmEndDate" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="BUId" ColumnName="BUId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RequestOutDate" ColumnName="RequestOutDate" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="LotId" ColumnName="LotId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

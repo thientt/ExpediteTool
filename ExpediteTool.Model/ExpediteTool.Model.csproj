@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE500E3F-44C6-4A2D-9DAA-F0E1199BD425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpediteTool.Model</RootNamespace>
+    <AssemblyName>ExpediteTool.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Assemblies\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Assemblies\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\IBuRepository.cs" />
+    <Compile Include="Abstracts\ILotExpediteRepository.cs" />
+    <Compile Include="Abstracts\IRepository.cs" />
+    <Compile Include="Abstracts\IRoleRepository.cs" />
+    <Compile Include="Abstracts\IUserRepository.cs" />
+    <Compile Include="Concretes\BuRepository.cs" />
+    <Compile Include="Concretes\LotExpediteRepository.cs" />
+    <Compile Include="Concretes\RoleRepository.cs" />
+    <Compile Include="Concretes\UserRepository.cs" />
+    <Compile Include="DataTransfer\BuDto.cs" />
+    <Compile Include="DataTransfer\DataTransferBase.cs" />
+    <Compile Include="DataTransfer\LotExpediteDto.cs" />
+    <Compile Include="DataTransfer\ReasonDto.cs" />
+    <Compile Include="DataTransfer\RoleUserDto.cs" />
+    <Compile Include="DataTransfer\TotalBuDto.cs" />
+    <Compile Include="DataTransfer\UsersInfoDto.cs" />
+    <Compile Include="GP_vSCMInvLatestSnapshot.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotLot_BUAllocation.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hotlot_BUs.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotLot_Data.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotLot_Roles.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\MoveType.cs" />
+    <Compile Include="Enum\RoleType.cs" />
+    <Compile Include="Enum\ActionResult.cs" />
+    <Compile Include="Enum\StatusType.cs" />
+    <Compile Include="ExpediteToolModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpediteToolModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpediteToolModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpediteToolModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpediteToolModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="HotLot_Users.cs">
+      <DependentUpon>ExpediteToolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enum\UserStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ExpediteToolModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExpediteToolModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExpediteToolModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExpediteToolModel.edmx</DependentUpon>
+      <LastGenOutput>ExpediteToolModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ExpediteToolModel.edmx.diagram">
+      <DependentUpon>ExpediteToolModel.edmx</DependentUpon>
+    </None>
+    <None Include="ExpediteToolModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExpediteToolModel.edmx</DependentUpon>
+      <LastGenOutput>ExpediteToolModel.cs</LastGenOutput>
+    </None>
+    <Content Include="Log4Net.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExpediteTool.Utilities\ExpediteTool.Utilities.csproj">
+      <Project>{e29989b1-6249-486a-aa6a-77e866969e2d}</Project>
+      <Name>ExpediteTool.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpediteToolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ACP_REPORTS.dbo.GP_vSCMInvLatestSnapshot' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GP_vSCMInvLatestSnapshot">
+    <Key>
+      <PropertyRef Name="SCMInvSnapshotID" />
+      <PropertyRef Name="SCMInvID" />
+      <PropertyRef Name="Lot" />
+      <PropertyRef Name="Transfer_Stat" />
+      <PropertyRef Name="Origin" />
+    </Key>
+    <Property Name="CalendarID" Type="smallint" />
+    <Property Name="SCMInvSnapshotID" Type="smallint" Nullable="false" />
+    <Property Name="SCMInvID" Type="int" Nullable="false" />
+    <Property Name="SCMInv_DateExtracted" Type="smalldatetime" />
+    <Property Name="Lot" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="RevLoc" Type="varchar" MaxLength="5" />
+    <Property Name="Phase" Type="varchar" MaxLength="1" />
+    <Property Name="Operation" Type="varchar" MaxLength="14" />
+    <Property Name="Die" Type="varchar" MaxLength="5" />
+    <Property Name="Family" Type="varchar" MaxLength="2" />
+    <Property Name="Transfer_Stat" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Origin" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Failure_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Comments" Type="varchar" MaxLength="510" />
+    <Property Name="LTS_MPN" Type="varchar" MaxLength="18" />
+    <Property Name="SCM_MPN" Type="varchar" MaxLength="18" />
+    <Property Name="Die_Rev" Type="varchar" MaxLength="1" />
+    <Property Name="SCM_Plant_Location" Type="varchar" MaxLength="8" />
+    <Property Name="Stock_PSO" Type="varchar" MaxLength="1" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Start_Date" Type="datetime" />
+    <Property Name="SCM_End_Date" Type="datetime" />
+    <Property Name="SCM_End_Date_To_CT" Type="int" />
+    <Property Name="SCM_Hit_Miss" Type="varchar" MaxLength="1" />
+    <Property Name="Phase_Est_Date" Type="datetime" />
+    <Property Name="Phase_Est_Date_To_CT" Type="int" />
+    <Property Name="Phase_Est_Hit_Miss" Type="varchar" MaxLength="1" />
+    <Property Name="MPN_CT" Type="smallint" />
+    <Property Name="Receiv_Plant" Type="varchar" MaxLength="8" />
+    <Property Name="Fab_Rev" Type="varchar" MaxLength="7" />
+    <Property Name="IntDevice" Type="varchar" MaxLength="20" />
+    <Property Name="Rom_Code" Type="varchar" MaxLength="4" />
+    <Property Name="Flash" Type="varchar" MaxLength="2" />
+    <Property Name="EEPROM" Type="varchar" MaxLength="2" />
+    <Property Name="Owner" Type="varchar" MaxLength="5" />
+    <Property Name="Group_ID" Type="varchar" MaxLength="8" />
+    <Property Name="Auto" Type="varchar" MaxLength="1" />
+    <Property Name="GPC" Type="varchar" MaxLength="3" />
+    <Property Name="Package" Type="varchar" MaxLength="3" />
+    <Property Name="Leads" Type="smallint" />
+    <Property Name="Speed" Type="varchar" MaxLength="2" />
+    <Property Name="Type" Type="varchar" MaxLength="1" />
+    <Property Name="Bond_Type" Type="varchar" MaxLength="2" />
+    <Property Name="Asm_Location" Type="varchar" MaxLength="8" />
+    <Property Name="Test_Location" Type="varchar" MaxLength="8" />
+    <Property Name="MfgLoc" Type="varchar" MaxLength="8" />
+    <Property Name="FabLoc" Type="varchar" MaxLength="3" />
+    <Property Name="Storage_Loc" Type="varchar" MaxLength="4" />
+    <Property Name="Lot_Stat" Type="varchar" MaxLength="5" />
+    <Property Name="Comets_Part_Number" Type="varchar" MaxLength="25" />
+    <Property Name="CPN" Type="varchar" MaxLength="25" />
+    <Property Name="SL" Type="varchar" MaxLength="8" />
+    <Property Name="Mapping_Part_Number" Type="varchar" MaxLength="25" />
+    <Property Name="Last_MPN" Type="varchar" MaxLength="18" />
+    <Property Name="Last_Qty" Type="int" />
+    <Property Name="Last_Owner" Type="varchar" MaxLength="5" />
+    <Property Name="Last_Location" Type="varchar" MaxLength="8" />
+    <Property Name="Last_Loc_Type" Type="varchar" MaxLength="4" />
+    <Property Name="Last_Store" Type="varchar" MaxLength="1" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="15" />
+    <Property Name="LastModif" Type="datetime" />
+    <Property Name="Audit_ID" Type="varchar" MaxLength="15" />
+    <Property Name="ABI_Start_delay" Type="smallint" />
+    <Property Name="OpDays" Type="smallint" />
+    <Property Name="AsmDateCd" Type="varchar" MaxLength="20" />
+    <Property Name="DieQty" Type="int" />
+    <Property Name="WaferQty" Type="int" />
+    <Property Name="NGD" Type="int" />
+    <Property Name="NGDSource" Type="varchar" MaxLength="1" />
+    <Property Name="DieQtyCalculated" Type="int" />
+    <Property Name="FGDieQtyCalculated" Type="int" />
+    <Property Name="WaferQtyCalculated" Type="int" />
+    <Property Name="PhaseWithDB" Type="varchar" MaxLength="2" />
+    <Property Name="MDL_devfam" Type="varchar" MaxLength="2" />
+    <Property Name="devfam" Type="varchar" MaxLength="2" />
+    <Property Name="DieCached" Type="varchar" MaxLength="5" />
+    <Property Name="BU" Type="varchar" MaxLength="20" />
+    <Property Name="PF" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="HotLot_BUAllocation">
+    <Key>
+      <PropertyRef Name="AllocationId" />
+    </Key>
+    <Property Name="AllocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BUId" Type="int" Nullable="false" />
+    <Property Name="LotAllocation" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotlot_BUs">
+    <Key>
+      <PropertyRef Name="BUId" />
+    </Key>
+    <Property Name="BUId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BUName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HotLot_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LotId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="RequestOutDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="BUId" Type="int" Nullable="false" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScmEndDate" Type="datetime" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="40" />
+    <Property Name="CurrentOperation" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Device" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Requestor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LotPriority" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HotLot_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HotLot_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime" Nullable="false" />
+    <Property Name="IsComfirmed" Type="bit" Nullable="false" />
+    <Property Name="Guid" Type="varchar" MaxLength="255" />
+    <Property Name="PasswordHasTemp" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_HotLot_BUAllocation_Hotlot_BUs">
+    <End Role="Hotlot_BUs" Type="Self.Hotlot_BUs" Multiplicity="1" />
+    <End Role="HotLot_BUAllocation" Type="Self.HotLot_BUAllocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotlot_BUs">
+        <PropertyRef Name="BUId" />
+      </Principal>
+      <Dependent Role="HotLot_BUAllocation">
+        <PropertyRef Name="BUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HotLot_Data_Hotlot_BUs">
+    <End Role="Hotlot_BUs" Type="Self.Hotlot_BUs" Multiplicity="1" />
+    <End Role="HotLot_Data" Type="Self.HotLot_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotlot_BUs">
+        <PropertyRef Name="BUId" />
+      </Principal>
+      <Dependent Role="HotLot_Data">
+        <PropertyRef Name="BUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_Role">
+    <End Role="HotLot_Roles" Type="Self.HotLot_Roles" Multiplicity="1" />
+    <End Role="HotLot_Users" Type="Self.HotLot_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HotLot_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="HotLot_Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExpediteToolModelStoreContainer">
+    <EntitySet Name="HotLot_BUAllocation" EntityType="Self.HotLot_BUAllocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotlot_BUs" EntityType="Self.Hotlot_BUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotLot_Data" EntityType="Self.HotLot_Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotLot_Roles" EntityType="Self.HotLot_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotLot_Users" EntityType="Self.HotLot_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GP_vSCMInvLatestSnapshot" EntityType="Self.GP_vSCMInvLatestSnapshot" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GP_vSCMInvLatestSnapshot].[CalendarID] AS [CalendarID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInvSnapshotID] AS [SCMInvSnapshotID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInvID] AS [SCMInvID], 
+    [GP_vSCMInvLatestSnapshot].[SCMInv_DateExtracted] AS [SCMInv_DateExtracted], 
+    [GP_vSCMInvLatestSnapshot].[Lot] AS [Lot], 
+    [GP_vSCMInvLatestSnapshot].[RevLoc] AS [RevLoc], 
+    [GP_vSCMInvLatestSnapshot].[Phase] AS [Phase], 
+    [GP_vSCMInvLatestSnapshot].[Operation] AS [Operation], 
+    [GP_vSCMInvLatestSnapshot].[Die] AS [Die], 
+    [GP_vSCMInvLatestSnapshot].[Family] AS [Family], 
+    [GP_vSCMInvLatestSnapshot].[Transfer_Stat] AS [Transfer_Stat], 
+    [GP_vSCMInvLatestSnapshot].[Origin] AS [Origin], 
+    [GP_vSCMInvLatestSnapshot].[Failure_Description] AS [Failure_Description], 
+    [GP_vSCMInvLatestSnapshot].[Comments] AS [Comments], 
+    [GP_vSCMInvLatestSnapshot].[LTS_MPN] AS [LTS_MPN], 
+    [GP_vSCMInvLatestSnapshot].[SCM_MPN] AS [SCM_MPN], 
+    [GP_vSCMInvLatestSnapshot].[Die_Rev] AS [Die_Rev], 
+    [GP_vSCMInvLatestSnapshot].[SCM_Plant_Location] AS [SCM_Plant_Location], 
+    [GP_vSCMInvLatestSnapshot].[Stock_PSO] AS [Stock_PSO], 
+    [GP_vSCMInvLatestSnapshot].[Quantity] AS [Quantity], 
+    [GP_vSCMInvLatestSnapshot].[Start_Date] AS [Start_Date], 
+    [GP_vSCMInvLatestSnapshot].[SCM_End_Date] AS [SCM_End_Date], 
+    [GP_vSCMInvLatestSnapshot].[SCM_End_Date_To_CT] AS [SCM_End_Date_To_CT], 
+    [GP_vSCMInvLatestSnapshot].[SCM_Hit_Miss] AS [SCM_Hit_Miss], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Date] AS [Phase_Est_Date], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Date_To_CT] AS [Phase_Est_Date_To_CT], 
+    [GP_vSCMInvLatestSnapshot].[Phase_Est_Hit_Miss] AS [Phase_Est_Hit_Miss], 
+    [GP_vSCMInvLatestSnapshot].[MPN_CT] AS [MPN_CT], 
+    [GP_vSCMInvLatestSnapshot].[Receiv_Plant] AS [Receiv_Plant], 
+    [GP_vSCMInvLatestSnapshot].[Fab_Rev] AS [Fab_Rev], 
+    [GP_vSCMInvLatestSnapshot].[IntDevice] AS [IntDevice], 
+    [GP_vSCMInvLatestSnapshot].[Rom_Code] AS [Rom_Code], 
+    [GP_vSCMInvLatestSnapshot].[Flash] AS [Flash], 
+    [GP_vSCMInvLatestSnapshot].[EEPROM] AS [EEPROM], 
+    [GP_vSCMInvLatestSnapshot].[Owner] AS [Owner], 
+    [GP_vSCMInvLatestSnapshot].[Group_ID] AS [Group_ID], 
+    [GP_vSCMInvLatestSnapshot].[Auto] AS [Auto], 
+    [GP_vSCMInvLatestSnapshot].[GPC] AS [GPC], 
+    [GP_vSCMInvLatestSnapshot].[Package] AS [Package], 
+    [GP_vSCMInvLatestSnapshot].[Leads] AS [Leads], 
+    [GP_vSCMInvLatestSnapshot].[Speed] AS [Speed], 
+    [GP_vSCMInvLatestSnapshot].[Type] AS [Type], 
+    [GP_vSCMInvLatestSnapshot].[Bond_Type] AS [Bond_Type], 
+    [GP_vSCMInvLatestSnapshot].[Asm_Location] AS [Asm_Location], 
+    [GP_vSCMInvLatestSnapshot].[Test_Location] AS [Test_Location], 
+    [GP_vSCMInvLatestSnapshot].[MfgLoc] AS [MfgLoc], 
+    [GP_vSCMInvLatestSnapshot].[FabLoc] AS [FabLoc], 
+    [GP_vSCMInvLatestSnapshot].[Storage_Loc] AS [Storage_Loc], 
+    [GP_vSCMInvLatestSnapshot].[Lot_Stat] AS [Lot_Stat], 
+    [GP_vSCMInvLatestSnapshot].[Comets_Part_Number] AS [Comets_Part_Number], 
+    [GP_vSCMInvLatestSnapshot].[CPN] AS [CPN], 
+    [GP_vSCMInvLatestSnapshot].[SL] AS [SL], 
+    [GP_vSCMInvLatestSnapshot].[Mapping_Part_Number] AS [Mapping_Part_Number], 
+    [GP_vSCMInvLatestSnapshot].[Last_MPN] AS [Last_MPN], 
+    [GP_vSCMInvLatestSnapshot].[Last_Qty] AS [Last_Qty], 
+    [GP_vSCMInvLatestSnapshot].[Last_Owner] AS [Last_Owner], 
+    [GP_vSCMInvLatestSnapshot].[Last_Location] AS [Last_Location], 
+    [GP_vSCMInvLatestSnapshot].[Last_Loc_Type] AS [Last_Loc_Type], 
+    [GP_vSCMInvLatestSnapshot].[Last_Store] AS [Last_Store], 
+    [GP_vSCMInvLatestSnapshot].[CreateDate] AS [CreateDate], 
+    [GP_vSCMInvLatestSnapshot].[CreateBy] AS [CreateBy], 
+    [GP_vSCMInvLatestSnapshot].[LastModif] AS [LastModif], 
+    [GP_vSCMInvLatestSnapshot].[Audit_ID] AS [Audit_ID], 
+    [GP_vSCMInvLatestSnapshot].[ABI_Start_delay] AS [ABI_Start_delay], 
+    [GP_vSCMInvLatestSnapshot].[OpDays] AS [OpDays], 
+    [GP_vSCMInvLatestSnapshot].[AsmDateCd] AS [AsmDateCd], 
+    [GP_vSCMInvLatestSnapshot].[DieQty] AS [DieQty], 
+    [GP_vSCMInvLatestSnapshot].[WaferQty] AS [WaferQty], 
+    [GP_vSCMInvLatestSnapshot].[NGD] AS [NGD], 
+    [GP_vSCMInvLatestSnapshot].[NGDSource] AS [NGDSource], 
+    [GP_vSCMInvLatestSnapshot].[DieQtyCalculated] AS [DieQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[FGDieQtyCalculated] AS [FGDieQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[WaferQtyCalculated] AS [WaferQtyCalculated], 
+    [GP_vSCMInvLatestSnapshot].[PhaseWithDB] AS [PhaseWithDB], 
+    [GP_vSCMInvLatestSnapshot].[MDL_devfam] AS [MDL_devfam], 
+    [GP_vSCMInvLatestSnapshot].[devfam] AS [devfam], 
+    [GP_vSCMInvLatestSnapshot].[DieCached] AS [DieCached], 
+    [GP_vSCMInvLatestSnapshot].[BU] AS [BU], 
+    [GP_vSCMInvLatestSnapshot].[PF] AS [PF]
+    FROM [dbo].[GP_vSCMInvLatestSnapshot] AS [GP_vSCMInvLatestSnapshot]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_HotLot_BUAllocation_Hotlot_BUs" Association="Self.FK_HotLot_BUAllocation_Hotlot_BUs">
+      <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+      <End Role="HotLot_BUAllocation" EntitySet="HotLot_BUAllocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HotLot_Data_Hotlot_BUs" Association="Self.FK_HotLot_Data_Hotlot_BUs">
+      <End Role="Hotlot_BUs" EntitySet="Hotlot_BUs" />
+      <End Role="HotLot_Data" EntitySet="HotLot_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_Role" Association="Self.FK_UserInfo_Role">
+      <End Role="HotLot_Roles" EntitySet="HotLot_Roles" />
+      <End Role="HotLot_Users" EntitySet="HotLot_Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

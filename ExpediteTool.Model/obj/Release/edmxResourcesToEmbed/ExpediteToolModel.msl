@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExpediteToolModelStoreContainer" CdmEntityContainer="ACPReportsEntities">
+    <EntitySetMapping Name="HotLot_BUAllocation">
+      <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_BUAllocation">
+        <MappingFragment StoreEntitySet="HotLot_BUAllocation">
+          <ScalarProperty Name="LotAllocation" ColumnName="LotAllocation" />
+          <ScalarProperty Name="BUId" ColumnName="BUId" />
+          <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotlot_BUs">
+      <EntityTypeMapping TypeName="ExpediteToolModel.Hotlot_BUs">
+        <MappingFragment StoreEntitySet="Hotlot_BUs">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BUName" ColumnName="BUName" />
+          <ScalarProperty Name="BUId" ColumnName="BUId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotLot_Roles">
+      <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Roles">
+        <MappingFragment StoreEntitySet="HotLot_Roles">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_vSCMInvLatestSnapshot">
+      <EntityTypeMapping TypeName="ExpediteToolModel.GP_vSCMInvLatestSnapshot">
+        <MappingFragment StoreEntitySet="GP_vSCMInvLatestSnapshot">
+          <ScalarProperty Name="PF" ColumnName="PF" />
+          <ScalarProperty Name="BU" ColumnName="BU" />
+          <ScalarProperty Name="DieCached" ColumnName="DieCached" />
+          <ScalarProperty Name="devfam" ColumnName="devfam" />
+          <ScalarProperty Name="MDL_devfam" ColumnName="MDL_devfam" />
+          <ScalarProperty Name="PhaseWithDB" ColumnName="PhaseWithDB" />
+          <ScalarProperty Name="WaferQtyCalculated" ColumnName="WaferQtyCalculated" />
+          <ScalarProperty Name="FGDieQtyCalculated" ColumnName="FGDieQtyCalculated" />
+          <ScalarProperty Name="DieQtyCalculated" ColumnName="DieQtyCalculated" />
+          <ScalarProperty Name="NGDSource" ColumnName="NGDSource" />
+          <ScalarProperty Name="NGD" ColumnName="NGD" />
+          <ScalarProperty Name="WaferQty" ColumnName="WaferQty" />
+          <ScalarProperty Name="DieQty" ColumnName="DieQty" />
+          <ScalarProperty Name="AsmDateCd" ColumnName="AsmDateCd" />
+          <ScalarProperty Name="OpDays" ColumnName="OpDays" />
+          <ScalarProperty Name="ABI_Start_delay" ColumnName="ABI_Start_delay" />
+          <ScalarProperty Name="Audit_ID" ColumnName="Audit_ID" />
+          <ScalarProperty Name="LastModif" ColumnName="LastModif" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Last_Store" ColumnName="Last_Store" />
+          <ScalarProperty Name="Last_Loc_Type" ColumnName="Last_Loc_Type" />
+          <ScalarProperty Name="Last_Location" ColumnName="Last_Location" />
+          <ScalarProperty Name="Last_Owner" ColumnName="Last_Owner" />
+          <ScalarProperty Name="Last_Qty" ColumnName="Last_Qty" />
+          <ScalarProperty Name="Last_MPN" ColumnName="Last_MPN" />
+          <ScalarProperty Name="Mapping_Part_Number" ColumnName="Mapping_Part_Number" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="CPN" ColumnName="CPN" />
+          <ScalarProperty Name="Comets_Part_Number" ColumnName="Comets_Part_Number" />
+          <ScalarProperty Name="Lot_Stat" ColumnName="Lot_Stat" />
+          <ScalarProperty Name="Storage_Loc" ColumnName="Storage_Loc" />
+          <ScalarProperty Name="FabLoc" ColumnName="FabLoc" />
+          <ScalarProperty Name="MfgLoc" ColumnName="MfgLoc" />
+          <ScalarProperty Name="Test_Location" ColumnName="Test_Location" />
+          <ScalarProperty Name="Asm_Location" ColumnName="Asm_Location" />
+          <ScalarProperty Name="Bond_Type" ColumnName="Bond_Type" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Leads" ColumnName="Leads" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="GPC" ColumnName="GPC" />
+          <ScalarProperty Name="Auto" ColumnName="Auto" />
+          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="EEPROM" ColumnName="EEPROM" />
+          <ScalarProperty Name="Flash" ColumnName="Flash" />
+          <ScalarProperty Name="Rom_Code" ColumnName="Rom_Code" />
+          <ScalarProperty Name="IntDevice" ColumnName="IntDevice" />
+          <ScalarProperty Name="Fab_Rev" ColumnName="Fab_Rev" />
+          <ScalarProperty Name="Receiv_Plant" ColumnName="Receiv_Plant" />
+          <ScalarProperty Name="MPN_CT" ColumnName="MPN_CT" />
+          <ScalarProperty Name="Phase_Est_Hit_Miss" ColumnName="Phase_Est_Hit_Miss" />
+          <ScalarProperty Name="Phase_Est_Date_To_CT" ColumnName="Phase_Est_Date_To_CT" />
+          <ScalarProperty Name="Phase_Est_Date" ColumnName="Phase_Est_Date" />
+          <ScalarProperty Name="SCM_Hit_Miss" ColumnName="SCM_Hit_Miss" />
+          <ScalarProperty Name="SCM_End_Date_To_CT" ColumnName="SCM_End_Date_To_CT" />
+          <ScalarProperty Name="SCM_End_Date" ColumnName="SCM_End_Date" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Stock_PSO" ColumnName="Stock_PSO" />
+          <ScalarProperty Name="SCM_Plant_Location" ColumnName="SCM_Plant_Location" />
+          <ScalarProperty Name="Die_Rev" ColumnName="Die_Rev" />
+          <ScalarProperty Name="SCM_MPN" ColumnName="SCM_MPN" />
+          <ScalarProperty Name="LTS_MPN" ColumnName="LTS_MPN" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Failure_Description" ColumnName="Failure_Description" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="Transfer_Stat" ColumnName="Transfer_Stat" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Die" ColumnName="Die" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="Phase" ColumnName="Phase" />
+          <ScalarProperty Name="RevLoc" ColumnName="RevLoc" />
+          <ScalarProperty Name="Lot" ColumnName="Lot" />
+          <ScalarProperty Name="SCMInv_DateExtracted" ColumnName="SCMInv_DateExtracted" />
+          <ScalarProperty Name="SCMInvID" ColumnName="SCMInvID" />
+          <ScalarProperty Name="SCMInvSnapshotID" ColumnName="SCMInvSnapshotID" />
+          <ScalarProperty Name="CalendarID" ColumnName="CalendarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotLot_Users">
+      <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Users">
+        <MappingFragment StoreEntitySet="HotLot_Users">
+          <ScalarProperty Name="PasswordHasTemp" ColumnName="PasswordHasTemp" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="IsComfirmed" ColumnName="IsComfirmed" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotLot_Data">
+      <EntityTypeMapping TypeName="ExpediteToolModel.HotLot_Data">
+        <MappingFragment StoreEntitySet="HotLot_Data">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="LotPriority" ColumnName="LotPriority" />
+          <ScalarProperty Name="Requestor" ColumnName="Requestor" />
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="CurrentOperation" ColumnName="CurrentOperation" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="ScmEndDate" ColumnName="ScmEndDate" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="BUId" ColumnName="BUId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RequestOutDate" ColumnName="RequestOutDate" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="LotId" ColumnName="LotId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
