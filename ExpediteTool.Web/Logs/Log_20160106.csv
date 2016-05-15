@@ -1,0 +1,16 @@
+2016-01-06 22:36:57,281 ERROR - Exception of type 'System.Exception' was thrown.
+System.Exception: Exception of type 'System.Exception' was thrown.
+   at ExpediteTool.Model.Concretes.UserRepository.Login(String userName, String pass) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Model\Concretes\UserRepository.cs:line 106
+2016-01-06 22:37:08,417 INFO  - Start Excel
+2016-01-06 22:37:36,065 ERROR - Microsoft Excel cannot open or save any more documents because there is not enough available memory or disk space. 
+
+• To make more memory available, close workbooks or programs you no longer need. 
+
+• To free disk space, delete files you no longer need from the disk you are saving to.
+System.Runtime.InteropServices.COMException (0x800A03EC): Microsoft Excel cannot open or save any more documents because there is not enough available memory or disk space. 
+
+• To make more memory available, close workbooks or programs you no longer need. 
+
+• To free disk space, delete files you no longer need from the disk you are saving to.
+   at ExpediteTool.Web.ExportExcel..ctor(String pathRoot, ILogService logService) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Infractructures\ExportExcel.cs:line 78
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnExportExcel_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 665

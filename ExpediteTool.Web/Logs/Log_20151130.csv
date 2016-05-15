@@ -1,0 +1,31 @@
+2015-11-30 22:16:11,751 ERROR - Specified cast is not valid.
+System.InvalidCastException: Specified cast is not valid.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916
+2015-11-30 22:22:15,271 ERROR - Specified cast is not valid.
+System.InvalidCastException: Specified cast is not valid.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916
+2015-11-30 22:24:01,092 ERROR - Specified cast is not valid.
+System.InvalidCastException: Specified cast is not valid.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916
+2015-11-30 22:41:37,075 INFO  - Start Excel
+2015-11-30 22:48:43,773 ERROR - Unable to cast object of type 'System.Double' to type 'System.String'.
+System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916
+2015-11-30 22:49:44,781 ERROR - Unable to cast object of type 'System.Double' to type 'System.String'.
+System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916
+2015-11-30 22:50:22,345 ERROR - Unable to cast object of type 'System.Double' to type 'System.String'.
+System.InvalidCastException: Unable to cast object of type 'System.Double' to type 'System.String'.
+   at ExpediteTool.Web.BulkLoader.Read() in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 120
+   at ExpediteTool.Web.BulkLoader..ctor(String fileName) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\BulkLoader.cs:line 32
+   at ExpediteTool.Web.Lots.ExpediteLot_List.btnUpload_Click(Object sender, EventArgs e) in e:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Web\Lots\ExpediteLot_List.aspx.cs:line 916

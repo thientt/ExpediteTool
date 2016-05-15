@@ -1,0 +1,87 @@
+﻿.margin-tab {
+    margin-top: 1px;
+}
+
+.col-sort {
+    min-width: 70px;
+}
+
+.ui-datepicker-trigger {
+    /*float: right;*/
+    width: 30px !important;
+    height: 30px !important;
+}
+
+    .ui-datepicker-trigger:hover {
+        cursor: pointer;
+    }
+
+.max-width {
+    max-width: 365px !important;
+}
+
+.max-width-calendar {
+    max-width: 330px !important;
+}
+
+.row-min-padding {
+    padding: 0px !important;
+    font-size: 18px;
+}
+
+table#grdTotalBu tbody tr td {
+    padding: 0px !important;
+    font-size: 18px;
+}
+
+    table#grdTotalBu tbody tr td span {
+        font-size: 13px;
+    }
+
+table#grdChildPending tbody tr td.non-col-up div input[type=image]:first-child {
+    display: none;
+}
+
+table#grdChildPending tbody tr td.non-col-down div input[type=image]:last-child {
+    display: none;
+}
+
+table#grdChildPending tbody tr td.non-col-act input[type=submit]:first-child {
+    display: none;
+}
+
+table#grdChildPending tbody tr td.non-col-del input[id="btnDelete"] {
+    display: none;
+}
+
+table#grdChildPending tbody tr td.non-col-del input[id="btnEdit"] {
+    display: none;
+}
+
+table#grdChildActived tbody tr td.non-col-comment input[type=button]:last-child {
+    display: none;
+}
+
+table#grdChildActived tbody tr td.show-col-comment input[type=button]:last-child {
+    display: block;
+}
+
+table#grdChildActived tbody tr td.non-col-action input[type=submit] {
+    display: none;
+}
+
+#pnWaitingProcess {
+    display: block;
+    background-image: url('../Images/ajax-loader.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* hide the close x on the loading screen */
+.loadingScreenWindow .ui-dialog-titlebar-close {
+    display: none;
+}
+
+#modalUpdateComment div div.modal-content {
+    max-width: 500px;
+}

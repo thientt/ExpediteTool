@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ExpediteTool.Web.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" class="row">
+    <meta />
+    <link href="Contents/bootstrap.css" rel="stylesheet" />
+    <link href="Contents/jquery-ui.css" rel="stylesheet" />
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="margin-top: 20px;">
+    <style>
+        .pagination-ys {
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+            .pagination-ys table tbody tr td {
+                display: inline;
+            }
+
+                .pagination-ys table tbody tr td a,
+                .pagination-ys table tbody tr td span {
+                    position: relative;
+                    float: left;
+                    padding: 8px 12px;
+                    line-height: 1.42857143;
+                    text-decoration: none;
+                    color: #dd4814;
+                    background-color: #ffffff;
+                    border: 1px solid #dddddd;
+                    margin-left: -1px;
+                }
+
+                .pagination-ys table tbody tr td span {
+                    position: relative;
+                    float: left;
+                    padding: 8px 12px;
+                    line-height: 1.42857143;
+                    text-decoration: none;
+                    margin-left: -1px;
+                    z-index: 2;
+                    color: #aea79f;
+                    background-color: #f5f5f5;
+                    border-color: #dddddd;
+                    cursor: default;
+                }
+
+                .pagination-ys table tbody tr td:first-child a,
+                .pagination-ys table tbody tr td:first-child span {
+                    margin-left: 0;
+                    border-bottom-left-radius: 4px;
+                    border-top-left-radius: 4px;
+                }
+
+                .pagination-ys table tbody tr td:last-child a,
+                .pagination-ys table tbody tr td:last-child span {
+                    border-bottom-right-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+
+                .pagination-ys table tbody tr td a:hover,
+                .pagination-ys table tbody tr td span:hover,
+                .pagination-ys table tbody tr td a:focus,
+                .pagination-ys table tbody tr td span:focus {
+                    color: #97310e;
+                    background-color: #eeeeee;
+                    border-color: #dddddd;
+                }
+    </style>
+
+    <form id="formmain" runat="server">
+        <script type="text/javascript">
+            ////**************************************************************************
+            //// Disable F5
+            ////**************************************************************************
+            $(document).ready(function () {
+                /* OR jQuery >= 1.7 */
+                $(document).on("keydown", disableF5);
+            });
+            function disableF5(e) {
+                if ((e.which || e.keyCode) == 116) {
+                    e.preventDefault();
+                }
+            };
+        </script>
+        <asp:ScriptManager runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/Contents/bootstrap.min.css" />
+                <asp:ScriptReference Path="~/Contents/Site.css" />
+                <asp:ScriptReference Path="~/Contents/jquery-ui.css" />
+                <asp:ScriptReference Path="~/Scripts/jquery.js"></asp:ScriptReference>
+                <asp:ScriptReference Path="~/Scripts/jquery-ui.js"></asp:ScriptReference>
+                <asp:ScriptReference Path="~/Scripts/bootstrap.js"></asp:ScriptReference>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <asp:Image runat="server" ID="imgLogo" ImageUrl="~/Images/logo.png" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a runat="server" href="~/User/Register.aspx">Register</a>
+                                </li>
+                                <li>
+                                    <a runat="server" href="~/User/Login.aspx">Login</a>
+                                </li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Lots/ExpediteLot_List.aspx">ExpediteLot List</a></li>
+                                <li><a runat="server" href="~/Lots/ClosedLot_List.aspx">ClosedLot List</a></li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%:Context.User.Identity.Name%>
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a runat="server" href="~/User/EditProfile.aspx" title="Profile your account">Edit profile</a></li>
+                                        <li><a runat="server" href="~/User/ChangePassword.aspx" title="Reset password">Change password</a></li>
+                                        <% if (ExpediteTool.Web.IdentityExtension.IsAdmin)
+                                           { %>
+                                        <li class="divider" />
+                                        <li>
+                                            <a runat="server" href="~/User/UserManagement.aspx">User Management</a>
+                                        </li>
+                                        <%} %>
+                                        <li class="divider" />
+                                        <li>
+                                            <asp:LoginStatus runat="server" ID="btnLogout" LogoutAction="Redirect" LogoutText="Log off" OnLoggingOut="LoggingOut" />
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
