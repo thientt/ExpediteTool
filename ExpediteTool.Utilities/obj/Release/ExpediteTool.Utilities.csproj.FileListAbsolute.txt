@@ -1,0 +1,8 @@
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\bin\Release\Logs\Log.csv
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\bin\Release\ExpediteTool.Utilities.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\bin\Release\ExpediteTool.Utilities.pdb
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\bin\Release\log4net.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\bin\Release\log4net.xml
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\obj\Release\ExpediteTool.Utilities.dll
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\obj\Release\ExpediteTool.Utilities.pdb
+E:\Projects\ExpediteTool\ExpediteTool_14_Aug\ExpediteTool.Utilities\obj\Release\ExpediteTool.Utilities.csprojResolveAssemblyReference.cache
